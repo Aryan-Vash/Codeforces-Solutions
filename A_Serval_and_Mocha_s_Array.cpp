@@ -19,13 +19,19 @@ void fnc() {
     vector <int> v(n);
     for (int i=0;i<n;i++) cin >> v[i];
 
-    vector<ll> hcf(n);
-    hcf[0] = v[0];
-    for (int i=1;i<n;i++) {
-        hcf[i] = gcd(hcf[i-1], v[i]);
-    }
+    sort(v.begin(), v.end());
 
-    
+    int g = v[0];  
+    for (int i=0;i<n;i++) {
+        for (int j=i+1;j<n;j++) {
+            g = gcd(v[i], v[j]);
+            if (g <= 2) {
+                cout << "Yes\n";
+                return;
+            }
+        }
+    }
+    cout << "No\n";
 }
 
 int main () {
