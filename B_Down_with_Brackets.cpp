@@ -12,7 +12,7 @@ void fnc() {
         return;
     }
     vector<int> v;
-    int cnt1 = 0, cnt2 = 0, cnt3 = 0, cnt4 = 0;
+    int cnt1 = 0, cnt2 = 0;
     for (int i=0;i<n;i++) {
         if (s[i] == '(') cnt1++;
         else if (s[i] == ')') cnt2++;
@@ -22,13 +22,7 @@ void fnc() {
             return;
         }
     }
-    // for (int i=n/2;i<n;i++) {
-    //     if (s[i] == '(') cnt3++;
-    //     else if (s[i] == ')') cnt4++;
-    // }
-    // if (cnt1 - 1 < cnt2 && cnt3 > cnt4 - 1) cout << "YES\n";
     cout << "NO\n";
-    // Read adjacency list or matrix here
 }
 
 int main () {
@@ -40,10 +34,6 @@ int main () {
     cin >> lines;
     while (lines--) {
         fnc();
-        // Call BFS or DFS as needed
-        // Example:
-        // bfs(1); // Start BFS from node 1
-        // dfs(1); // Start DFS from node 1
     }
     return 0;
 }
