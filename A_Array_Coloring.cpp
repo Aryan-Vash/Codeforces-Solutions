@@ -1,34 +1,28 @@
 #include <bits/stdc++.h>
 using namespace std;
 
-#define ll long long
-
-void fnc() {
-    ll n; cin >> n;
-    vector <int> v(n);
-    int sum = 0;
-    for (int i=0;i<n;i++) {
-        cin >> v[i];
-        sum += v[i];
+void solve() {
+    int n; cin >> n;
+    vector<int> nums(n);
+    for (int i=0;i<n;i++) cin >> nums[i];
+    
+    for (int i=0;i<n-1;i++) {
+        if (nums[i] % 2 == nums[i+1] % 2) {
+            cout << "NO\n";
+            return;
+        }
     }
-
-    if (sum % 2 == 0) cout << "YES\n";
-    else cout << "NO\n";
+    cout << "YES\n";
 }
 
-int main () {
+int main() {
     ios::sync_with_stdio(false);
-    cin.tie(NULL);
+    cin.tie(nullptr);
 
-    int lines;
-    lines = 1;
-    cin >> lines;
-    while (lines--) {
-        fnc();
-        // Call BFS or DFS as needed
-        // Example:
-        // bfs(1); // Start BFS from node 1
-        // dfs(1); // Start DFS from node 1
+    int t; cin >> t;
+    while (t--) {
+        solve();
     }
+
     return 0;
 }
